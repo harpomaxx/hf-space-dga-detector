@@ -7,7 +7,6 @@ library(reticulate)
 #model<-load_model_hdf5("/app/asai-2019_model.h5")
 
 hfhub <- reticulate::import('huggingface_hub')
-tf <- reticulate::import("tensorflow")
 model <- hfhub$from_pretrained_keras("harpomaxx/dga-detector")
 
 
