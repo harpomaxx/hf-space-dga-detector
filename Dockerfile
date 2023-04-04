@@ -1,7 +1,7 @@
 FROM rstudio/plumber
 MAINTAINER Carlos Catania (AKA Harpo) "harpomaxx@gmail.com"
 RUN apt update -y; apt install -y python3-venv python3-dev python3-pip
-#RUN pip3 install huggingface_hub
+RUN pip3 install huggingface_hub
 RUN R -e "install.packages('reticulate');library('reticulate');reticulate::py_install('huggingface_hub')" 
 RUN R -e "install.packages('tensorflow')"
 RUN R -e "install.packages('keras')"
