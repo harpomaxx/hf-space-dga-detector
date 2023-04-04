@@ -1,9 +1,16 @@
 library(keras)
 library(plumber)
+library(reticulate)
 
 # loading the DGA model for classifier 
 #model<-load_model_hdf5("/home/harpo/Dropbox/ongoing-work/git-repos/dga-wb-r/docker/app/pmodel.h5")
-model<-load_model_hdf5("/app/asai-2019_model.h5")
+#model<-load_model_hdf5("/app/asai-2019_model.h5")
+
+hfhub = reticulate::import('huggingface_hub')
+tf <- reticulate::import("tensorflow")
+model <- hfhub$from_pretrained_keras("harpomaxx/dga-detector")
+
+
 modelid="cacic-2018-model"
 
 valid_characters <- "$abcdefghijklmnopqrstuvwxyz0123456789-_."
