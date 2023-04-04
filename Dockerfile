@@ -14,6 +14,8 @@ RUN R -e "library(tensorflow);install_tensorflow(version='2.9')"
 RUN R -e "library(keras);install_keras(version='2.9')"
 COPY /app /app
 WORKDIR /app
+RUN mkdir -p /.cache
+RUN chmod 777 /.cache
 EXPOSE 7860
 ENTRYPOINT ["Rscript","/app/launchservice.R"]
 
