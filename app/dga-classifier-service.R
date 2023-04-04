@@ -40,3 +40,7 @@ function(domain){
   prediction<-predict(model,domain_encoded)
   return(list(modelid=modelid,domain=domain,class=ifelse(prediction[1]>0.9,1,0),probability=prediction[1]))
 }
+
+#* @assets ./static /
+list()
+
