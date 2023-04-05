@@ -52,10 +52,11 @@ h1 {
 }
 
 .text-gen-output {
-  min-height: 1.2rem;
-  margin: 1rem;
+  width: 100%;
+  min-height: 2.2rem;
   padding: 0.5rem;
   border: 1px solid grey;
+  background-color: #D3D3D3;
   border-radius: 5px;
 }
 
