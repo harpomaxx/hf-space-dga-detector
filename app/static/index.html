@@ -5,32 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fast API 🤗 Space served with Uvicorn</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script type="module" src="script.js"></script>
   </head>
   <body>
-    <main>
-      <section id="text-gen">
-        <h1>Simple DGA detector using 1DCNN </h1>
-        <p>
-          Model:
-          <a
-              href="https://huggingface.co/harpomaxx/dga-detector"
-              rel="noreferrer"
-              target="_blank"
-            >harpomaxx/dga-detector 
-	  </a>
-        </p>
-        <form class="text-gen-form">
-          <label for="text-gen-input">A list of domain names </label>
-	  <textarea
-            id="text-gen-input"
-            type="text"
-	    value="www.google.com">
-	  </textarea>
-          <button id="text-gen-submit">Submit</button>
-          <p class="text-gen-output"></p>
-        </form>
-      </section>
-    </main>
-  </body>
+<main>
+  <section id="text-gen">
+    <h1 class="title">Simple DGA detector using 1DCNN</h1>
+    <p class="model">
+      Model:
+      <a href="https://huggingface.co/harpomaxx/dga-detector" rel="noreferrer" target="_blank">harpomaxx/dga-detector</a>
+    </p>
+    <form class="text-gen-form">
+      <label for="text-gen-input">Check for domains (one per line)</label>
+      <textarea id="text-gen-input" rows="10"></textarea>
+      <button id="text-gen-submit">Submit</button>
+      <p class="text-gen-output"></p>
+      <i class="fas fa-copy copy-icon"></i>
+    </form>
+  </section>
+</main>
+
+ </body>
 </html>

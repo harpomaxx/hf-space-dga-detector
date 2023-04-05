@@ -14,7 +14,8 @@ textGenForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const textGenInput = document.getElementById("text-gen-input");
-  const textGenParagraph = document.querySelector(".text-gen-output");
+  const textGenParagraph = document.querySelector(".text-gen-output"); 
+  const copyButton = document.querySelector('.copy-icon');
 
   // Split the inputted text into separate domains
   const domains = textGenInput.value.trim().split('\n');
@@ -27,5 +28,15 @@ textGenForm.addEventListener("submit", async (event) => {
   }
   
   textGenParagraph.textContent = output;
+  copyButton.addEventListener('click', () => {
+	      const textarea = document.createElement('textarea');
+	      textarea.value = output;
+	      document.body.appendChild(textarea);
+	      textarea.select();
+	      document.execCommand('copy');
+	      textarea.remove();
+	    });
+
+
 });
 
