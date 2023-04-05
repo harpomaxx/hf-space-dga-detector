@@ -5,10 +5,10 @@ const translateText = async (text) => {
   const inferJson = await inferResponse.json();
   console.log(inferResponse);
   console.log(inferJson);
-  const res  = 'The probability of being DGA is : ' + inferJson.probability
+  const res = `domain:"${text}",probDGA:${inferJson.probability}`;
   return res
-
 };
+
 
 textGenForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -16,5 +16,16 @@ textGenForm.addEventListener("submit", async (event) => {
   const textGenInput = document.getElementById("text-gen-input");
   const textGenParagraph = document.querySelector(".text-gen-output");
 
-  textGenParagraph.textContent = await translateText(textGenInput.value);
+  // Split the inputted text into separate domains
+  const domains = textGenInput.value.trim().split('\n');
+  
+  let output = '';
+  
+  // Loop over each domain and submit it to the URL one at a time
+  for (let i = 0; i < domains.length; i++) {
+    output += await translateText(domains[i]) + '\n';
+  }
+  
+  textGenParagraph.textContent = output;
 });
+
