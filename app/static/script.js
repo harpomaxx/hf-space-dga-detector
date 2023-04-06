@@ -5,7 +5,7 @@ const translateText = async (text) => {
   const inferJson = await inferResponse.json();
   console.log(inferResponse);
   console.log(inferJson);
-  const res = `domain:"${text}",probDGA:${inferJson.probability},isdga:${inferJson.class}`;
+  const res = `domain:"${text}",probDGA:${inferJson.probability},isDGA?:${inferJson.class}`;
   return res
 };
 
